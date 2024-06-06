@@ -1,18 +1,20 @@
-package es.ies.puerto.modelo.entities;
+package es.ies.puerto.modelo.dao;
 
-public class Paciente {
+import java.util.Objects;
+
+public class PacientoDto {
     private int dni_paciente;
     public String nombre;
     private String historial;
 
-    public Paciente() {
+    public PacientoDto() {
     }
 
-    public Paciente(int dni_paciente) {
+    public PacientoDto(int dni_paciente) {
         this.dni_paciente = dni_paciente;
     }
 
-    public Paciente(int dni_paciente, String nombre, String historial) {
+    public PacientoDto(int dni_paciente, String nombre, String historial) {
         this.dni_paciente = dni_paciente;
         this.nombre = nombre;
         this.historial = historial;
@@ -42,21 +44,22 @@ public class Paciente {
         this.historial = historial;
     }
 
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-        if (!super.equals(object)) return false;
-        Paciente paciente = (Paciente) object;
-        return dni_paciente == paciente.dni_paciente;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PacientoDto that = (PacientoDto) o;
+        return dni_paciente == that.dni_paciente;
     }
 
+    @Override
     public int hashCode() {
-        return java.util.Objects.hash(super.hashCode(), dni_paciente);
+        return Objects.hash(dni_paciente);
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
-        return "Paciente{" +
+    @Override
+    public String toString() {
+        return "PacientoDto{" +
                 "dni_paciente=" + dni_paciente +
                 ", nombre='" + nombre + '\'' +
                 ", historial='" + historial + '\'' +

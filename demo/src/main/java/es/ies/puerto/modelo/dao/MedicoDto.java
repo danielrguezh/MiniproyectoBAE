@@ -1,17 +1,20 @@
-package es.ies.puerto.modelo.entities;
+package es.ies.puerto.modelo.dao;
 
-public class Medico {
+import java.util.Objects;
+
+public class MedicoDto {
     private int dni_paciente;
     public String nombre;
     private String especialidad;
 
-    public Medico() {}
+    public MedicoDto() {
+    }
 
-    public Medico(int dni_paciente) {
+    public MedicoDto(int dni_paciente) {
         this.dni_paciente = dni_paciente;
     }
 
-    public Medico(int dni_paciente, String nombre, String especialidad) {
+    public MedicoDto(int dni_paciente, String nombre, String especialidad) {
         this.dni_paciente = dni_paciente;
         this.nombre = nombre;
         this.especialidad = especialidad;
@@ -41,21 +44,22 @@ public class Medico {
         this.especialidad = especialidad;
     }
 
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-        if (!super.equals(object)) return false;
-        Medico medico = (Medico) object;
-        return dni_paciente == medico.dni_paciente;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MedicoDto medicoDto = (MedicoDto) o;
+        return dni_paciente == medicoDto.dni_paciente;
     }
 
+    @Override
     public int hashCode() {
-        return java.util.Objects.hash(super.hashCode(), dni_paciente);
+        return Objects.hash(dni_paciente);
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
-        return "Medico{" +
+    @Override
+    public String toString() {
+        return "MedicoDto{" +
                 "dni_paciente=" + dni_paciente +
                 ", nombre='" + nombre + '\'' +
                 ", especialidad='" + especialidad + '\'' +

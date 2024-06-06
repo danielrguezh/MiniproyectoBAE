@@ -1,21 +1,22 @@
-package es.ies.puerto.modelo.entities;
+package es.ies.puerto.modelo.dao;
 
-public class Cita {
+import java.util.Objects;
+
+public class CitaDto {
     int id_cita;
     String fecha;
     private int dni_paciente;
     private int dni_medico;
     private String valoracion;
 
-    public Cita() {}
+    public CitaDto() {
+    }
 
-
-
-    public Cita(int id_cita) {
+    public CitaDto(int id_cita) {
         this.id_cita = id_cita;
     }
 
-    public Cita(int id_cita, String fecha, int dni_paciente, int dni_medico, String valoracion) {
+    public CitaDto(int id_cita, String fecha, int dni_paciente, int dni_medico, String valoracion) {
         this.id_cita = id_cita;
         this.fecha = fecha;
         this.dni_paciente = dni_paciente;
@@ -63,21 +64,22 @@ public class Cita {
         this.valoracion = valoracion;
     }
 
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-        if (!super.equals(object)) return false;
-        Cita cita = (Cita) object;
-        return id_cita == cita.id_cita;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CitaDto citaDto = (CitaDto) o;
+        return id_cita == citaDto.id_cita;
     }
 
+    @Override
     public int hashCode() {
-        return java.util.Objects.hash(super.hashCode(), id_cita);
+        return Objects.hash(id_cita);
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
-        return "Cita{" +
+    @Override
+    public String toString() {
+        return "CitaDto{" +
                 "id_cita=" + id_cita +
                 ", fecha='" + fecha + '\'' +
                 ", dni_paciente=" + dni_paciente +
