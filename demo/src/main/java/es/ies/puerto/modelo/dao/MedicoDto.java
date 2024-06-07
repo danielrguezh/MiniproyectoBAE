@@ -1,4 +1,4 @@
-package es.ies.puerto.dto;
+package es.ies.puerto.modelo.dao;
 
 import java.util.Objects;
 

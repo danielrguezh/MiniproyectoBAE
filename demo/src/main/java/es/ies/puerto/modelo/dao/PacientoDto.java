@@ -1,20 +1,20 @@
-package es.ies.puerto.dto;
+package es.ies.puerto.modelo.dao;
 
 import java.util.Objects;
 
-public class PacienteDto {
+public class PacientoDto {
     private int dni_paciente;
     public String nombre;
     private String historial;
 
-    public PacienteDto() {
+    public PacientoDto() {
     }
 
-    public PacienteDto(int dni_paciente) {
+    public PacientoDto(int dni_paciente) {
         this.dni_paciente = dni_paciente;
     }
 
-    public PacienteDto(int dni_paciente, String nombre, String historial) {
+    public PacientoDto(int dni_paciente, String nombre, String historial) {
         this.dni_paciente = dni_paciente;
         this.nombre = nombre;
         this.historial = historial;
@@ -48,7 +48,7 @@ public class PacienteDto {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PacienteDto that = (PacienteDto) o;
+        PacientoDto that = (PacientoDto) o;
         return dni_paciente == that.dni_paciente;
     }
 
