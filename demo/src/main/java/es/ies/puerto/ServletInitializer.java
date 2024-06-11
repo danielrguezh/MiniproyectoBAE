@@ -1,5 +1,6 @@
-package es.ies.puerto.demo;
+package es.ies.puerto;
 
+import es.ies.puerto.demo.DemoApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 

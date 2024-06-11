@@ -1,28 +1,34 @@
 package es.ies.puerto.modelo.entities;
 
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Paciente {
-    private int dni_paciente;
-    public String nombre;
+    @Id
+    private String dni_paciente;
+    private String nombre;
     private String historial;
 
     public Paciente() {
     }
 
-    public Paciente(int dni_paciente) {
+    public Paciente(String dni_paciente) {
         this.dni_paciente = dni_paciente;
     }
 
-    public Paciente(int dni_paciente, String nombre, String historial) {
+    public Paciente(String dni_paciente, String nombre, String historial) {
         this.dni_paciente = dni_paciente;
         this.nombre = nombre;
         this.historial = historial;
     }
 
-    public int getDni_paciente() {
+    public String getDni_paciente() {
         return dni_paciente;
     }
 
-    public void setDni_paciente(int dni_paciente) {
+    public void setDni_paciente(String dni_paciente) {
         this.dni_paciente = dni_paciente;
     }
 

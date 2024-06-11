@@ -1,9 +1,46 @@
 package es.ies.puerto.service;
 
-public class CitaService {
-    int id_cita;
-    String fecha;
-    private int dni_paciente;
-    private int dni_medico;
-    private String valoracion;
+import es.ies.puerto.modelo.entities.Cita;
+import es.ies.puerto.repositories.ICitaRepository;
+import es.ies.puerto.service.interfaces.ICrudServiceMongoDb;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
+
+public class CitaService implements ICrudServiceMongoDb<Cita> {
+    private ICitaRepository citaRepository;
+    @Autowired
+    public void setCitaRepository(ICitaRepository citaRepository) {
+        this.citaRepository = citaRepository;
+    }
+
+    @Override
+    public List<Cita> getAllObjects() {
+        return citaRepository.findAll();
+    }
+
+    @Override
+    public Cita saveObject(Cita cita) {
+        return citaRepository.save(cita);
+    }
+
+
+    @Override
+    public Cita updateObject(Cita cita) {
+        if (citaRepository.existsById(cita.getId_cita())) {
+            return citaRepository.save(cita);
+        } else {
+            throw new RuntimeException("Cita not found with id " + cita.getId_cita());
+        }
+    }
+
+    @Override
+    public void deleteObject(String id) {
+        if (citaRepository.existsById(id)) {
+            citaRepository.deleteById(id);
+        } else {
+            throw new RuntimeException("Character not found with id " + id);
+        }
+    }
 }
+

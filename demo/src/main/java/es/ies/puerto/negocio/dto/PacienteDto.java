@@ -1,30 +1,30 @@
-package es.ies.puerto.modelo.dao;
+package es.ies.puerto.negocio.dto;
 
 import java.util.Objects;
 
-public class MedicoDto {
-    private int dni_paciente;
-    public String nombre;
-    private String especialidad;
+public class PacienteDto {
+    private String dni_paciente;
+    private String nombre;
+    private String historial;
 
-    public MedicoDto() {
+    public PacienteDto() {
     }
 
-    public MedicoDto(int dni_paciente) {
+    public PacienteDto(String dni_paciente) {
         this.dni_paciente = dni_paciente;
     }
 
-    public MedicoDto(int dni_paciente, String nombre, String especialidad) {
+    public PacienteDto(String dni_paciente, String nombre, String historial) {
         this.dni_paciente = dni_paciente;
         this.nombre = nombre;
-        this.especialidad = especialidad;
+        this.historial = historial;
     }
 
-    public int getDni_paciente() {
+    public String  getDni_paciente() {
         return dni_paciente;
     }
 
-    public void setDni_paciente(int dni_paciente) {
+    public void setDni_paciente(String dni_paciente) {
         this.dni_paciente = dni_paciente;
     }
 
@@ -36,20 +36,20 @@ public class MedicoDto {
         this.nombre = nombre;
     }
 
-    public String getEspecialidad() {
-        return especialidad;
+    public String getHistorial() {
+        return historial;
     }
 
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
+    public void setHistorial(String historial) {
+        this.historial = historial;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        MedicoDto medicoDto = (MedicoDto) o;
-        return dni_paciente == medicoDto.dni_paciente;
+        PacienteDto that = (PacienteDto) o;
+        return dni_paciente == that.dni_paciente;
     }
 
     @Override
@@ -59,10 +59,10 @@ public class MedicoDto {
 
     @Override
     public String toString() {
-        return "MedicoDto{" +
+        return "PacientoDto{" +
                 "dni_paciente=" + dni_paciente +
                 ", nombre='" + nombre + '\'' +
-                ", especialidad='" + especialidad + '\'' +
+                ", historial='" + historial + '\'' +
                 '}';
     }
 }

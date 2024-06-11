@@ -1,6 +1,6 @@
 package es.ies.puerto.mapper;
 
-import es.ies.puerto.modelo.dao.CitaDto;
+import es.ies.puerto.negocio.dto.CitaDto;
 import es.ies.puerto.modelo.entities.Cita;
 
 public class CitaMapper {

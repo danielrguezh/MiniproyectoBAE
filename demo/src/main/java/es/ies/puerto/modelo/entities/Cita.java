@@ -1,21 +1,27 @@
 package es.ies.puerto.modelo.entities;
 
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Cita {
-    int id_cita;
-    String fecha;
-    private int dni_paciente;
-    private int dni_medico;
+    @Id
+    private String id_cita;
+    private String fecha;
+    private String dni_paciente;
+    private String dni_medico;
     private String valoracion;
 
     public Cita() {}
 
 
 
-    public Cita(int id_cita) {
+    public Cita(String id_cita) {
         this.id_cita = id_cita;
     }
 
-    public Cita(int id_cita, String fecha, int dni_paciente, int dni_medico, String valoracion) {
+    public Cita(String id_cita, String fecha, String dni_paciente, String dni_medico, String valoracion) {
         this.id_cita = id_cita;
         this.fecha = fecha;
         this.dni_paciente = dni_paciente;
@@ -23,11 +29,11 @@ public class Cita {
         this.valoracion = valoracion;
     }
 
-    public int getId_cita() {
+    public String getId_cita() {
         return id_cita;
     }
 
-    public void setId_cita(int id_cita) {
+    public void setId_cita(String id_cita) {
         this.id_cita = id_cita;
     }
 
@@ -39,19 +45,19 @@ public class Cita {
         this.fecha = fecha;
     }
 
-    public int getDni_paciente() {
+    public String getDni_paciente() {
         return dni_paciente;
     }
 
-    public void setDni_paciente(int dni_paciente) {
+    public void setDni_paciente(String dni_paciente) {
         this.dni_paciente = dni_paciente;
     }
 
-    public int getDni_medico() {
+    public String getDni_medico() {
         return dni_medico;
     }
 
-    public void setDni_medico(int dni_medico) {
+    public void setDni_medico(String dni_medico) {
         this.dni_medico = dni_medico;
     }
 
