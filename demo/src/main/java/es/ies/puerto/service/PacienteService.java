@@ -4,9 +4,10 @@ import es.ies.puerto.modelo.entities.Paciente;
 import es.ies.puerto.repositories.IPacienteRepository;
 import es.ies.puerto.service.interfaces.ICrudServiceMongoDb;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class PacienteService implements ICrudServiceMongoDb<Paciente> {
     private IPacienteRepository pacienteRepository;
 

@@ -4,7 +4,7 @@ package es.ies.puerto.modelo.entities;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection = "citas")
 public class Cita {
     @Id
     private String id_cita;

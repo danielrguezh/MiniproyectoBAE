@@ -4,9 +4,11 @@ import es.ies.puerto.modelo.entities.Cita;
 import es.ies.puerto.repositories.ICitaRepository;
 import es.ies.puerto.service.interfaces.ICrudServiceMongoDb;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CitaService implements ICrudServiceMongoDb<Cita> {
     private ICitaRepository citaRepository;
     @Autowired

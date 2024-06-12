@@ -1,5 +1,6 @@
 package es.ies.puerto.controller;
 
+import es.ies.puerto.controller.interfaces.ICrudControllerMongo;
 import es.ies.puerto.modelo.entities.Cita;
 import es.ies.puerto.service.CitaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,13 +12,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/citas")
-public class CitaController {
+public class CitaController implements ICrudControllerMongo<Cita> {
     private CitaService citaService;
-
     @Autowired
     public void setCitaService(CitaService citaService) {
-        this.citaService = citaService;
+        this.citaService = new CitaService();
     }
+
 
     @GetMapping("/")
 
