@@ -15,6 +15,13 @@ import java.util.List;
 public class MedicoController {
     private MedicoService medicoService;
 
+    public MedicoController() {
+    }
+
+    public MedicoController(MedicoService medicoService) {
+        this.medicoService = medicoService;
+    }
+
     @Autowired
     public void setMedicoService(MedicoService medicoService) {
         this.medicoService = medicoService;

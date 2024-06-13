@@ -17,6 +17,14 @@ import java.util.List;
 @Api(value = "Ejemplo de API", tags = {"Ejemplo"})
 public class CitaController implements ICrudControllerMongo<Cita> {
     private CitaService citaService;
+
+    public CitaController() {
+    }
+
+    public CitaController(CitaService citaService) {
+        this.citaService = citaService;
+    }
+
     @Autowired
     public void setCitaService(CitaService citaService) {
         this.citaService = citaService;

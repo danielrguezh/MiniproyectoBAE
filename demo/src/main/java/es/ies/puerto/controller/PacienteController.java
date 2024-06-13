@@ -19,6 +19,10 @@ public class PacienteController {
     public PacienteController() {
     }
 
+    public PacienteController(PacienteService pacienteService) {
+        this.pacienteService = pacienteService;
+    }
+
     @Autowired
     public void setPacienteService(PacienteService pacienteService) {
         this.pacienteService = pacienteService;
