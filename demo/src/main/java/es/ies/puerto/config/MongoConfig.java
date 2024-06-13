@@ -18,7 +18,7 @@ public class MongoConfig extends AbstractMongoClientConfiguration {
     @Bean
     @Override
     public MongoClient mongoClient() {
-        ConnectionString connectionString = new ConnectionString("mongodb+srv://<username>:<password>@cluster0.pty2wex.mongodb.net/test?ssl=true");
+        ConnectionString connectionString = new ConnectionString("mongodb+srv://vdanielrh11100:GYgnf967gAMrEmzbcluster0.pty2wex.mongodb.net/test?ssl=true");
         MongoClientSettings mongoClientSettings = MongoClientSettings.builder()
                 .applyConnectionString(connectionString)
                 .build();
