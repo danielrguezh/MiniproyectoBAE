@@ -14,7 +14,8 @@
   - [Detalles del proyecto](#index01)
   - [Modelo de datos utilizado ](#index02)
   - [Funcionalidades implementadas](#index03)
-  - [Cobertura de código](#index04)
+- [Cobertura de código](/cobertura/)
+     
 
 ## Detalles del proyecto <a name="index01"></a>
 Miniproyecto: CRUD con Mongodb y Maven. Hecho por Daniel Alejandro Rodríguez Herrera y Samuel Hernández Barroso
@@ -120,12 +121,5 @@ La aplicación incluye las funcionalidades de un CRUD respectivamente para cada 
   - Cita, Medico y Paciente.
 - **deleteObject:**
   - Cita, Medico y Paciente.
-<br>
-
-
-
-## Cobertura de código<a name="index04"></a>
-
-
 
 </div>
