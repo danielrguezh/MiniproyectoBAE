@@ -124,7 +124,7 @@ La aplicación incluye las funcionalidades de un CRUD respectivamente para cada 
 
 
 
-## Cobertura de códig <a name="index04"></a>
+## Cobertura de código<a name="index04"></a>
 
 
 
