@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class MedicoService implements ICrudServiceMongoDb<Medico> {
     private IMedicoRepository medicoRepository;
@@ -28,10 +29,10 @@ public class MedicoService implements ICrudServiceMongoDb<Medico> {
 
     @Override
     public Medico updateObject(Medico medico) {
-        if (medicoRepository.existsById(medico.getDni_paciente())) {
+        if (medicoRepository.existsById(medico.getDni_medico())) {
             return medicoRepository.save(medico);
         } else {
-            throw new RuntimeException("Medico not found with id " + medico.getDni_paciente());
+            throw new RuntimeException("Medico not found with id " + medico.getDni_medico());
         }
     }
 

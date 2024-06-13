@@ -1,7 +1,7 @@
 package es.ies.puerto.mapper;
 
-import es.ies.puerto.negocio.dto.MedicoDto;
 import es.ies.puerto.modelo.entities.Medico;
+import es.ies.puerto.negocio.dto.MedicoDto;
 
 public class MedicoMapper {
     public static MedicoDto medicoToMedicoDTO(Medico medico){
@@ -11,7 +11,7 @@ public class MedicoMapper {
         MedicoDto medicoDto = new MedicoDto();
         medicoDto.setNombre(medico.getNombre());
         medicoDto.setEspecialidad(medico.getEspecialidad());
-        medicoDto.setDni_paciente(medico.getDni_paciente());
+        medicoDto.setDni_medico(medico.getDni_medico());
 
         return medicoDto;
     }
@@ -23,7 +23,7 @@ public class MedicoMapper {
         Medico medico = new Medico();
         medico.setNombre(medicoDto.getNombre());
         medico.setEspecialidad(medicoDto.getEspecialidad());
-        medico.setDni_paciente(medicoDto.getDni_paciente());
+        medico.setDni_medico(medicoDto.getDni_medico());
 
         return medico;
     }
