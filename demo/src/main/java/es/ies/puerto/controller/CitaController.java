@@ -19,7 +19,7 @@ public class CitaController implements ICrudControllerMongo<Cita> {
     private CitaService citaService;
     @Autowired
     public void setCitaService(CitaService citaService) {
-        this.citaService = new CitaService();
+        this.citaService =CitaService;
     }
 
 
