@@ -19,9 +19,8 @@ public class CitaController implements ICrudControllerMongo<Cita> {
     private CitaService citaService;
     @Autowired
     public void setCitaService(CitaService citaService) {
-        this.citaService =CitaService;
+        this.citaService = citaService;
     }
-
 
     @GetMapping("/")
     @ApiOperation(value = "getAllObjects")
